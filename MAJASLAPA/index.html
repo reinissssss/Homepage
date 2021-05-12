@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="datoru remonts Rīgā un Daugavpilī">
+    <meta name="autors" content="Reinis Ķiberis">
+    <title>Reiņa Ķibera mājaslapa</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./php/site.php">
+
+    <script type="text/javascript">
+    function checkAddress(HTMLText) {
+    var validate = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (document.forms['mailForm'].mailText.value === ""){
+    alert("Email address is required");
+     }
+    if (HTMLText.value.match(validate)) {
+    alert("E-mail adress is registred");
+    document.mailForm.mailText.focus();
+    return true;
+    } else {
+    alert("Please provide a valid e-mail adress");
+    document.mailForm.mailText.focus();
+    return false;
+    }
+    }
+
+    function checkCheckBox(f){
+   if (f.agree.checked == false )
+   {
+   alert('You must accept the terms and conditions');
+   return false;
+   }
+   else
+   return true;
+   }
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Datoru remonts</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="index.html">Sākums</a></li>
+            <li><a href="pakalpojumi.html">Pakalpojumi</a></li>
+            <li><a href="parmums.html">Par mums</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="lielais">
+      <div class="container">
+        <h1>Sertificēts datoru remonts it visur</h1>
+<p>Mūsu uzņēmumā strādā labākie sertificētie speciālisti, kuri savu darbu veic profesionāli un kvalitatīvi, lai mūsu klientu vēlmes tiktu īstenotas.</p>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="container">
+        <h1>Piesakies datoru remontam jau tagad!</h1>
+        <form  method="POST" action="site.php" onsubmit="return checkCheckBox(this)" name="mailForm">
+Email:<br><input type='text' name='mailText'><br>
+I accept terms and conditions: <input type="checkbox" value="0" name="agree">
+<input type="submit" name="submit" value="Pieteikties" onclick="checkMyMailAddress(document.mailForm.mailText)">
+        </form>
+      </div>
+    </section>
+
+    <section id="boxes">
+      <div class="container">
+        <div class="box">
+          <img src="./img/logo1.png" alt="logo">
+          <h3>&#9679;Datoru diagnostika un remonts</h3>
+          <p>Vēršoties mūsu servisā, mūsu inženieri veic bojājuma diagnostiku. Pēc diagnostikas veikšanas Jums paziņo datora bojājuma iemeslus, darbu veikšanas plānu un to cenu.</p>
+        </div>
+        <div class="box">
+          <img src="./img/logo3.jpg" alt="logo" >
+          <h3>&#9679;Datu atjaunošana no HDD</h3>
+          <p>Pat tādu labāko ražotāju kā SEAGATE, WESTERN DIGITAL (WD), TOSHIBA, HITACHI un SAMSUNG cietos diskus nogādā mūsu remontdarbnīcā. Remontējam arī citu ražotāju cietos diskus.</p>
+        </div>
+        <div class="box">
+          <img src="./img/logo2.jpg" alt="logo">
+          <h3>&#9679;Operētājsistēmas uzstādīšana, iestatīšana un atjaunošana</h3>
+          <p>Uzstādīsim jebkādu jums vēlamo operētājsistēmu, kā arī mūsu speciālisti palīdzēs uzstādīt un iestatīt MS Office ofisa programmu paketi atbilstoši pasūtītāja individuālajām vajadzībām.</p>
+        </div>
+      </div>
+    </section>
+    <div class="social">
+  <a href="#" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a>
+  <a href="#" class="link twitter" target="_parent"><span class="fa fa-twitter"></span></a>
+  <a href="#" class="link google-plus" target="_parent"><span class="fa fa-google-plus-square"></span></a>
+    </div>
+    <footer>
+      <p><b><i>Reinis Ķiberis &copy; 2021</i></b></p>
+    </footer>
+  </body>
+</html>
